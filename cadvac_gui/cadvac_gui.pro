@@ -31,4 +31,18 @@ HEADERS += \
         mainwindow.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        searchPost.ui \
+        searchPatient.ui \
+        searchNurse.ui \
+        postManagement.ui \
+        postDetails.ui \
+        patientManagement.ui \
+        patientDetails.ui \
+        nurseManagement.ui \
+        nurseDetails.ui \
+        login.ui \
+        health_secretary.ui \
+        createPost.ui \
+        createPatient.ui \
+        createNurse.ui \

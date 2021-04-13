@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>NurseManagementWindow</class>
+ <widget class="QMainWindow" name="NurseManagementWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>314</width>
-    <height>338</height>
+    <width>321</width>
+    <height>370</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestão de Pacientes</string>
+   <string>Gerenciar Enfermeiros</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>-10</y>
-      <width>501</width>
-      <height>401</height>
+      <x>0</x>
+      <y>0</y>
+      <width>321</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -63,9 +63,6 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
     </widget>
     <widget class="QFrame" name="wrapper">
      <property name="geometry">
@@ -85,7 +82,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="addPatientButton">
+     <widget class="QPushButton" name="createPostButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -95,13 +92,13 @@
        </rect>
       </property>
       <property name="text">
-       <string>Adicionar paciente</string>
+       <string>Adicionar enfermeiro</string>
       </property>
       <property name="default">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="findPatientButton">
+     <widget class="QPushButton" name="findPostButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -111,7 +108,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Buscar paciente</string>
+       <string>Buscar enfermeiro</string>
       </property>
       <property name="default">
        <bool>true</bool>

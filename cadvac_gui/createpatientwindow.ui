@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>CreatePatientWindow</class>
+ <widget class="QMainWindow" name="CreatePatientWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
-    <height>352</height>
+    <width>332</width>
+    <height>353</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Detalhes do enfermeiro</string>
+   <string>Criar paciente</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
-      <width>601</width>
-      <height>601</height>
+      <width>341</width>
+      <height>371</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -70,7 +70,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="cpfLineEdit">
+    <widget class="QLineEdit" name="cpf">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -83,7 +83,7 @@
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="nameLineEdit">
+    <widget class="QLineEdit" name="name">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -115,6 +115,22 @@
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="addPatientButton">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>230</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Adicionar paciente</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
     <widget class="QLineEdit" name="susNumberTag">
      <property name="geometry">
       <rect>
@@ -125,7 +141,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Registro COREN:</string>
+      <string>Número do SUS:</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -134,7 +150,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="numberSUS_lineEdit">
+    <widget class="QLineEdit" name="susNumber">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -158,38 +174,6 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="removePatientButton">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>240</y>
-       <width>181</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Remover enfermeiro</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="updatePatientButton">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>290</y>
-       <width>181</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Atualizar enfermeiro</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
      </property>
     </widget>
    </widget>

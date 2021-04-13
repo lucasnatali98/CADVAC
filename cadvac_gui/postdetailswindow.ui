@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>PostDetailsWindow</class>
+ <widget class="QMainWindow" name="PostDetailsWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
+    <width>350</width>
     <height>320</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Detalhes do posto</string>
+   <string>Detalhes do Posto</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
-      <width>601</width>
-      <height>601</height>
+      <width>351</width>
+      <height>321</height>
      </rect>
     </property>
     <property name="styleSheet">

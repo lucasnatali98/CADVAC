@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>SearchPostWindow</class>
+ <widget class="QMainWindow" name="SearchPostWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>289</width>
-    <height>221</height>
+    <width>300</width>
+    <height>220</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Procurar Paciente</string>
+   <string>Procurar posto</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
-      <width>601</width>
-      <height>601</height>
+      <width>301</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -32,7 +32,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="nameTag">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -51,7 +51,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="nameLineEdit">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -74,7 +74,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Buscar paciente</string>
+      <string>Buscar posto</string>
      </property>
      <property name="default">
       <bool>true</bool>

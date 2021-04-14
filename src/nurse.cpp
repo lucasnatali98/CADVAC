@@ -77,6 +77,19 @@ ostream& operator<<(ostream &out, const Nurse &n){
     out <<n.getName()<<", "<<n.getCpf()<<", "<<n.getBirthDate()<<", "<<n.getCoren()<<endl;
     return out;
 }
+Nurse &Nurse::operator=(Nurse &copy)
+{
+    if(&copy == this) return (*this);
+
+    this->name = copy.name;
+    this->cpf = copy.cpf;
+    this->birthDate = copy.birthDate;
+    this->coren = copy.coren;
+    this->nurses = copy.nurses;
+
+
+    return (*this);
+}
 string Nurse::getCpf() const
 {
     return cpf;

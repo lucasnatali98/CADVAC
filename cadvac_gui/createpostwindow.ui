@@ -96,7 +96,7 @@
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="addPatientButton">
+    <widget class="QPushButton" name="addPostButton">
      <property name="geometry">
       <rect>
        <x>120</x>

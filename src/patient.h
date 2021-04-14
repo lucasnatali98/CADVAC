@@ -9,9 +9,9 @@ class Patient
 public:
     Patient();
     virtual ~Patient();
-    Patient(string cpf, string name, string birthDate, string susNumber, int vaccine);
+    Patient(string cpf, string name, string birthDate, string susNumber, int vaccine = 0);
 
-    void createPatient(string cpf, string name, string birthDate, string susNumber, int vaccine);
+    void createPatient(string cpf, string name, string birthDate, string susNumber, int vaccine=0);
     bool removePatient(string cpf);
     Patient* getPatient(string cpf);
     bool updatePatient(Patient* p, string cpf="", string name="", string birthDate="",
@@ -35,6 +35,7 @@ public:
 
     string getBirthDate() const;
     void setBirthDate(const string &value);
+    Patient &operator=(Patient&);
 
 protected:
     string cpf;

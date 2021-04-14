@@ -1,7 +1,11 @@
 #ifndef HEALTHSECRETARYWINDOW_H
 #define HEALTHSECRETARYWINDOW_H
-
+#include "nursemanagementwindow.h"
+#include "patientmanagementwindow.h"
+#include "postsmanagementwindow.h"
 #include <QMainWindow>
+#include <iostream>
+using namespace std;
 
 namespace Ui {
 class HealthSecretaryWindow;
@@ -12,6 +16,10 @@ class HealthSecretaryWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    PostsManagementWindow *posts_mw;
+    NurseManagementWindow *nurse_mw;
+    PatientManagementWindow *patient_mw;
+
     explicit HealthSecretaryWindow(QWidget *parent = 0);
     ~HealthSecretaryWindow();
 

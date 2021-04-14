@@ -43,7 +43,8 @@ SOURCES += \
         healthsecretarywindow.cpp \
         patientmanagementwindow.cpp \
         nursemanagementwindow.cpp \
-        postsmanagementwindow.cpp
+        postsmanagementwindow.cpp \
+    updateavailablevaccineswindow.cpp
 
 
 HEADERS += \
@@ -65,7 +66,8 @@ HEADERS += \
         healthsecretarywindow.h \
         patientmanagementwindow.h \
         nursemanagementwindow.h \
-        postsmanagementwindow.h
+        postsmanagementwindow.h \
+    updateavailablevaccineswindow.h
 
 FORMS += \
         mainwindow.ui \
@@ -83,6 +85,7 @@ FORMS += \
         patientmanagementwindow.ui \
         nursemanagementwindow.ui \
         postsmanagementwindow.ui \
+    updateavailablevaccineswindow.ui
 
 
 INCLUDEPATH += $$PWD/../src/

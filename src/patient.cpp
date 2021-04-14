@@ -77,7 +77,20 @@ void Patient::listPatients()
 }
 
 
+Patient &Patient::operator=(Patient &copy)
+{
+    if(&copy == this) return (*this);
 
+    this->name = copy.name;
+    this->cpf = copy.cpf;
+    this->birthDate = copy.birthDate;
+    this->susNumber = copy.susNumber;
+    this->vaccineDosesTaken = copy.vaccineDosesTaken;
+    this->patients = copy.patients;
+
+
+    return (*this);
+}
 ostream &operator<<(ostream &out, const Patient &p)
 {
     out<<p.getName()<<", "<<p.getCpf()<<", "<<p.getSusNumber()<<", "<<

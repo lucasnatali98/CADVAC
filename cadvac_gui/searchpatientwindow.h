@@ -1,8 +1,10 @@
 #ifndef SEARCHPATIENTWINDOW_H
 #define SEARCHPATIENTWINDOW_H
-
+#include "patientdetailswindow.h"
 #include <QMainWindow>
-
+#include <iostream>
+#include "../src/system.h"
+using namespace std;
 namespace Ui {
 class SearchPatientWindow;
 }
@@ -12,6 +14,8 @@ class SearchPatientWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    System *sys;
+    PatientDetailsWindow patientDetailsWindow;
     explicit SearchPatientWindow(QWidget *parent = 0);
     ~SearchPatientWindow();
 

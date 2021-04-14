@@ -42,7 +42,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Nome:</string>
+      <string>CPF:</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -51,7 +51,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="name">
+    <widget class="QLineEdit" name="cpf">
      <property name="geometry">
       <rect>
        <x>80</x>

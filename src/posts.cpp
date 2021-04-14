@@ -60,6 +60,17 @@ bool Posts::updatePost(Posts *pt, string name, string address, int vaccineCount)
     return false;
 }
 
+bool Posts::updateVaccineNumber(Posts *pt, int vNumber)
+{
+    for(auto i: posts){
+        if(i == pt){
+            i->setVaccineCount(vNumber);
+            return true;
+        }
+    }
+    return false;
+}
+
 void Posts::listPosts()
 {
 
@@ -98,6 +109,17 @@ void Posts::setVaccineCount(int value)
     vaccineCount = value;
 }
 
+Posts &Posts::operator=(Posts &copy)
+{
+    if(&copy == this) return (*this);
+
+    this->postName = copy.postName;
+    this->address = copy.address;
+    this->vaccineCount = copy.vaccineCount;
+    this->posts = copy.posts;
+
+    return (*this);
+}
 ostream &operator<<(ostream &out, const Posts &p)
 {
     out<<p.getPostName()<<", "<<p.getAddress()<<", "<<p.getVaccineCount()<<endl;

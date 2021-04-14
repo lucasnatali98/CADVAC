@@ -6,6 +6,9 @@ NurseManagementWindow::NurseManagementWindow(QWidget *parent) :
     ui(new Ui::NurseManagementWindow)
 {
     ui->setupUi(this);
+    sys = new System();
+    createNurseWindow = new CreateNurseWindow();
+    searchNurseWindow = new SearchNurseWindow();
 }
 
 NurseManagementWindow::~NurseManagementWindow()
@@ -13,17 +16,34 @@ NurseManagementWindow::~NurseManagementWindow()
     delete ui;
 }
 
-void NurseManagementWindow::on_createPostButton_clicked()
-{
 
-}
-
-void NurseManagementWindow::on_findPostButton_clicked()
-{
-
-}
 
 void NurseManagementWindow::on_previusPageCommandButton_clicked()
 {
+    this->close();
+}
 
+void NurseManagementWindow::on_createNurseButton_clicked()
+{
+    createNurseWindow->setVisible(true);
+    sys->nurse = createNurseWindow->getSys()->nurse;
+}
+
+void NurseManagementWindow::on_findNurseButton_clicked()
+{
+    searchNurseWindow->setVisible(true);
+    searchNurseWindow->sys = sys;
+
+    searchNurseWindow->sys->nurse->listNurses();
+
+}
+
+Ui::NurseManagementWindow *NurseManagementWindow::getUi() const
+{
+    return ui;
+}
+
+QLineEdit *NurseManagementWindow::getSecretaryName() const
+{
+    return ui->secretaryName;
 }

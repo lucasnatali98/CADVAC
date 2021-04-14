@@ -82,6 +82,9 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="nameLineEdit">
      <property name="geometry">
@@ -94,6 +97,9 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="bornTag">
@@ -162,18 +168,8 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
-    </widget>
-    <widget class="QDateEdit" name="dateEdit">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>100</y>
-       <width>91</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="dosesTakenTag">
@@ -207,6 +203,9 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="removePatientButton">
      <property name="geometry">
@@ -237,6 +236,22 @@
       <string>Atualizar paciente</string>
      </property>
      <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="birthDateLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>100</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="readOnly">
       <bool>true</bool>
      </property>
     </widget>

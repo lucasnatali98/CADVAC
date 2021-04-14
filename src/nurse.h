@@ -11,6 +11,8 @@ public:
     Nurse();
     Nurse(string cpf, string name, string birthDate, int coren);
     virtual ~Nurse();
+
+
     void createNurse(string cpf, string name, string birthDate, int coren);
     bool removeNurse(string cpf);
     bool updateNurse(Nurse *n, string cpf="", string name="", string birthDate="", int coren=-1);
@@ -26,6 +28,7 @@ public:
     void setBirthDate(const string &value);
     int getCoren() const;
     void setCoren(int value);
+    Nurse &operator=(Nurse&);
 
     friend ostream &operator<<(ostream &out, const Nurse &n);
 protected:

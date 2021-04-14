@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SearchNurseWindow</class>
- <widget class="QMainWindow" name="SearchNurseWindow">
+ <class>UpdateAvailableVaccinesWindow</class>
+ <widget class="QMainWindow" name="UpdateAvailableVaccinesWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>218</height>
+    <width>302</width>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Procurar Enfermeiro</string>
+   <string>Atualizar Vacinas Disponíveis</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>301</width>
+      <width>311</width>
       <height>221</height>
      </rect>
     </property>
@@ -32,17 +32,17 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="vaccinesTag">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>30</y>
-       <width>51</width>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
      <property name="text">
-      <string>CPF:</string>
+      <string>Nova quantidade:</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -51,12 +51,12 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="cpf">
+    <widget class="QLineEdit" name="vaccines">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>150</x>
        <y>30</y>
-       <width>191</width>
+       <width>101</width>
        <height>25</height>
       </rect>
      </property>
@@ -64,17 +64,17 @@
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="searchNurseButton">
+    <widget class="QPushButton" name="updateVaccinesButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>50</x>
        <y>150</y>
-       <width>181</width>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="text">
-      <string>Buscar enfermeiro</string>
+      <string>Atualizar vacinas disponíveis</string>
      </property>
      <property name="default">
       <bool>true</bool>

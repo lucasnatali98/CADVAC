@@ -9,10 +9,10 @@ class Posts
 {
 public:
     Posts();
-    Posts(string name, string address, int vaccineCount);
+    Posts(string name, string address, int vaccineCount=0);
     virtual ~Posts();
 
-    void createPost(string name, string address, int vaccineCount);
+    void createPost(string name, string address, int vaccineCount=0);
     bool removePost(string name);
     Posts *getPost(string name);
     bool updatePost(Posts *pt, string name="", string address="", int vaccineCount=-1);
@@ -27,6 +27,7 @@ public:
     int getVaccineCount() const;
     void setVaccineCount(int value);
 
+    Posts &operator=(Posts&);
     friend ostream &operator<<(ostream &out, const Posts &p);
 
 protected:

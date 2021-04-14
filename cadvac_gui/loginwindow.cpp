@@ -15,5 +15,5 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_pushButton_clicked()
 {
-
+    //health.setVisible(true);
 }

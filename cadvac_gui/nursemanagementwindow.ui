@@ -63,6 +63,9 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QFrame" name="wrapper">
      <property name="geometry">
@@ -82,7 +85,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="createPostButton">
+     <widget class="QPushButton" name="createNurseButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -98,7 +101,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="findPostButton">
+     <widget class="QPushButton" name="findNurseButton">
       <property name="geometry">
        <rect>
         <x>20</x>

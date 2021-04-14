@@ -1,5 +1,9 @@
 #ifndef PATIENTDETAILSWINDOW_H
 #define PATIENTDETAILSWINDOW_H
+#include "../src/system.h"
+#include <iostream>
+#include <QLineEdit>
+using namespace std;
 
 #include <QMainWindow>
 
@@ -12,8 +16,17 @@ class PatientDetailsWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    System *sys;
     explicit PatientDetailsWindow(QWidget *parent = 0);
     ~PatientDetailsWindow();
+
+    QLineEdit *getCpfLineEdit();
+    QLineEdit *getNameLineEdit();
+    QLineEdit *getBirthDateLineEdit();
+    QLineEdit *getNumberSUSLineEdit();
+    QLineEdit *getVaccineDosesTakenLineEdit();
+    System *getSys() const;
+    void setSys(System *value);
 
 private slots:
     void on_scheduleVaccinationButton_clicked();
@@ -22,6 +35,7 @@ private slots:
 
     void on_updatePatientButton_clicked();
 
+    void clearForm();
 private:
     Ui::PatientDetailsWindow *ui;
 };

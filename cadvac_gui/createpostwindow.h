@@ -1,5 +1,7 @@
 #ifndef CREATEPOSTWINDOW_H
 #define CREATEPOSTWINDOW_H
+#include "../src/system.h"
+#include <QMessageBox>
 
 #include <QMainWindow>
 
@@ -12,12 +14,17 @@ class CreatePostWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    System *sys;
     explicit CreatePostWindow(QWidget *parent = 0);
     ~CreatePostWindow();
 
-private slots:
-    void on_addPatientButton_clicked();
+    System *getSys() const;
 
+private slots:
+
+
+    void on_addPostButton_clicked();
+    void clearForm();
 private:
     Ui::CreatePostWindow *ui;
 };

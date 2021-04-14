@@ -63,6 +63,9 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QFrame" name="wrapper">
      <property name="geometry">
@@ -82,7 +85,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="createPostButton">
+     <widget class="QPushButton" name="createPatientButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -92,13 +95,13 @@
        </rect>
       </property>
       <property name="text">
-       <string>Criar posto</string>
+       <string>Criar paciente</string>
       </property>
       <property name="default">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="findPostButton">
+     <widget class="QPushButton" name="findPatientButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -108,7 +111,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Buscar posto</string>
+       <string>Buscar paciente</string>
       </property>
       <property name="default">
        <bool>true</bool>

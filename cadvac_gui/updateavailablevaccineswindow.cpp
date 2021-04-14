@@ -26,16 +26,26 @@ UpdateAvailableVaccinesWindow::~UpdateAvailableVaccinesWindow()
 
 void UpdateAvailableVaccinesWindow::on_updateVaccinesButton_clicked()
 {
-    Posts *p = sys->post->getPost("posto1");
-    cout<<"Posto: "<<*p<<endl;
-    int v = ui->vaccines->text().toInt();
+    Posts *p = sys->post->getPost(postName);
 
-    sys->post->updateVaccineNumber(p, v);
-    cout<<"Posto: "<<*p<<endl;
-    QMessageBox qmsg;
-    qmsg.setWindowTitle("Confirmação");
-    qmsg.setText("O número de vacinas foi atualizado com sucesso");
-    qmsg.exec();
+    if(p!=nullptr){
+        int v = ui->vaccines->text().toInt();
+
+        sys->post->updateVaccineNumber(p, v);
+        cout<<"Posto: "<<*p<<endl;
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("Confirmação");
+        qmsg.setText("O número de vacinas foi atualizado com sucesso");
+        qmsg.exec();
+    }
+    else{
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("ERRO");
+        qmsg.setText("O número de vacinas não pode ser atualizado");
+        qmsg.exec();
+    }
+
+
     clearForm();
 
     this->close();
@@ -44,4 +54,5 @@ void UpdateAvailableVaccinesWindow::on_updateVaccinesButton_clicked()
 void UpdateAvailableVaccinesWindow::clearForm()
 {
     ui->vaccines->clear();
+
 }

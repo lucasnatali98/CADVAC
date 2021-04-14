@@ -37,7 +37,7 @@ QLineEdit *PostDetailsWindow::getPostNameLineEdit()
 
 QLineEdit *PostDetailsWindow::getVaccinesLineEdit()
 {
-
+    return ui->vaccinesLineEdit;
 }
 
 void PostDetailsWindow::on_updatePostButton_clicked()
@@ -55,11 +55,15 @@ void PostDetailsWindow::on_updateNumberVaccinesButton_clicked()
     updateVaccines.setVisible(true);
     updateVaccines.setSys(sys);
 
-
+    updateVaccines.postName = ui->nameLineEdit->text().toStdString();
+    clearForm();
+    this->close();
 
 }
 
 void PostDetailsWindow::clearForm()
 {
-
+    ui->addressLineEdit->clear();
+    ui->nameLineEdit->clear();
+    ui->vaccinesLineEdit->clear();
 }

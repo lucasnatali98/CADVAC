@@ -43,6 +43,7 @@ NurseDetailsWindow::NurseDetailsWindow(QWidget *parent) :
 
 NurseDetailsWindow::~NurseDetailsWindow()
 {
+    clearForm();
     delete ui;
 }
 
@@ -54,11 +55,13 @@ void NurseDetailsWindow::on_updateNurseButton_clicked()
 
 void NurseDetailsWindow::on_removeNurseButton_clicked()
 {
-    cout<<"REMOVE NURSE"<<endl;
-    sys->nurse->listNurses();
+
 }
 
 void NurseDetailsWindow::clearForm()
 {
-
+    ui->birthDateLineEdit->clear();
+    ui->cpfLineEdit->clear();
+    ui->numberCorenlineEdit->clear();
+    ui->nameLineEdit->clear();
 }

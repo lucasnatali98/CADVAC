@@ -66,5 +66,8 @@ void PatientDetailsWindow::on_updatePatientButton_clicked()
 
 void PatientDetailsWindow::clearForm()
 {
-
+    ui->cpfLineEdit->clear();
+    ui->birthDateLineEdit->clear();
+    ui->nameLineEdit->clear();
+    ui->numberSUS_lineEdit->clear();
 }

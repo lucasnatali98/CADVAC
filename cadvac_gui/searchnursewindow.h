@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <QDate>
+#include <QMessageBox>
 #include "../src/system.h"
 #include <iostream>
 using namespace std;
@@ -23,7 +24,7 @@ public:
 
 private slots:
     void on_searchNurseButton_clicked();
-
+    void clearForm();
 private:
     Ui::SearchNurseWindow *ui;
 };

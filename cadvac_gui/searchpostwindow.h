@@ -3,6 +3,7 @@
 #include "postdetailswindow.h"
 #include <QMainWindow>
 #include <QString>
+#include <QMessageBox>
 #include <QDate>
 #include "../src/system.h"
 #include <iostream>
@@ -25,7 +26,7 @@ private slots:
 
 
     void on_searchPostButton_clicked();
-
+    void clearForm();
 private:
     Ui::SearchPostWindow *ui;
 };

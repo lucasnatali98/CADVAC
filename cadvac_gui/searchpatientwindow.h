@@ -2,6 +2,7 @@
 #define SEARCHPATIENTWINDOW_H
 #include "patientdetailswindow.h"
 #include <QMainWindow>
+#include <QMessageBox>
 #include <iostream>
 #include "../src/system.h"
 using namespace std;
@@ -21,7 +22,7 @@ public:
 
 private slots:
     void on_searchPatientButton_clicked();
-
+    void clearForm();
 private:
     Ui::SearchPatientWindow *ui;
 };

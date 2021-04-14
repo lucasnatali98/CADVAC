@@ -1,8 +1,10 @@
 #include <iostream>
+#include "system.h"
 using namespace std;
 
 
 int main(){
-    cout<<"PAO"<<endl;
+    System *sys = new System();
+    sys->run();
     return 1;
 }

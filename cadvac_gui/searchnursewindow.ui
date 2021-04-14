@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>SearchNurseWindow</class>
+ <widget class="QMainWindow" name="SearchNurseWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>289</width>
-    <height>221</height>
+    <width>300</width>
+    <height>218</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>0</x>
       <y>0</y>
-      <width>601</width>
-      <height>601</height>
+      <width>301</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -42,7 +42,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Nome:</string>
+      <string>CPF:</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -51,7 +51,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="cpf">
      <property name="geometry">
       <rect>
        <x>80</x>

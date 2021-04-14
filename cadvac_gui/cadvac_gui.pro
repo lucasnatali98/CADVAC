@@ -25,24 +25,67 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        createnursewindow.cpp \
+        ../src/system.cpp \
+        ../src/posts.cpp \
+        ../src/nurse.cpp \
+        ../src/patient.cpp \
+        createpatientwindow.cpp \
+        createpostwindow.cpp \
+        loginwindow.cpp \
+        searchnursewindow.cpp \
+        searchpatientwindow.cpp \
+        searchpostwindow.cpp \
+        nursedetailswindow.cpp \
+        patientdetailswindow.cpp \
+        postdetailswindow.cpp \
+        healthsecretarywindow.cpp \
+        patientmanagementwindow.cpp \
+        nursemanagementwindow.cpp \
+        postsmanagementwindow.cpp \
+    updateavailablevaccineswindow.cpp
+
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        createnursewindow.h \
+        ../src/system.h \
+        ../src/posts.h \
+        ../src/nurse.h \
+        ../src/patient.h \
+        createpatientwindow.h \
+        createpostwindow.h \
+        loginwindow.h \
+        searchnursewindow.h \
+        searchpatientwindow.h \
+        searchpostwindow.h \
+        nursedetailswindow.h \
+        patientdetailswindow.h \
+        postdetailswindow.h \
+        healthsecretarywindow.h \
+        patientmanagementwindow.h \
+        nursemanagementwindow.h \
+        postsmanagementwindow.h \
+    updateavailablevaccineswindow.h
 
 FORMS += \
         mainwindow.ui \
-        searchPost.ui \
-        searchPatient.ui \
-        searchNurse.ui \
-        postManagement.ui \
-        postDetails.ui \
-        patientManagement.ui \
-        patientDetails.ui \
-        nurseManagement.ui \
-        nurseDetails.ui \
-        login.ui \
-        health_secretary.ui \
-        createPost.ui \
-        createPatient.ui \
-        createNurse.ui \
+        createnursewindow.ui \
+        createpatientwindow.ui \
+        createpostwindow.ui \
+        loginwindow.ui \
+        searchnursewindow.ui \
+        searchpatientwindow.ui \
+        searchpostwindow.ui \
+        nursedetailswindow.ui \
+        patientdetailswindow.ui \
+        postdetailswindow.ui \
+        healthsecretarywindow.ui \
+        patientmanagementwindow.ui \
+        nursemanagementwindow.ui \
+        postsmanagementwindow.ui \
+    updateavailablevaccineswindow.ui
+
+
+INCLUDEPATH += $$PWD/../src/

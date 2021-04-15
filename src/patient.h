@@ -1,49 +1,36 @@
 #ifndef PATIENT_H
 #define PATIENT_H
-using namespace std;
 #include <string>
-#include <list>
-#include <iostream>
+using namespace std;
+
 class Patient
 {
 public:
-    Patient();
-    virtual ~Patient();
-    Patient(string cpf, string name, string birthDate, string susNumber, int vaccine = 0);
 
-    void createPatient(string cpf, string name, string birthDate, string susNumber, int vaccine=0);
-    bool removePatient(string cpf);
-    Patient* getPatient(string cpf);
-    bool updatePatient(Patient* p, string cpf="", string name="", string birthDate="",
-                       string susNumber="", int vaccine = -1);
+    virtual void createPatient(string cpf, string name, string birthDate,
+                       string susNumber, int vaccine=0) = 0;
+    virtual bool removePatient(string cpf)=0;
+    virtual Patient* getPatient(string cpf)=0;
+    virtual bool updatePatient(Patient* p, string cpf="", string name="", string birthDate="",
+                       string susNumber="", int vaccine = -1)=0;
 
-    void listPatients();
+    virtual void listPatients()=0;
 
-    friend ostream &operator<<(ostream &out, const Patient &p);
+    static Patient *generatePatient();
+    virtual ~Patient(){}
 
-    string getCpf() const;
-    void setCpf(const string &value);
+    virtual string getCpf() const=0;
+    virtual string getName() const=0;
+    virtual int getVaccineDosesTaken() const=0;
+    virtual string getSusNumber() const=0;
+    virtual string getBirthDate() const=0;
 
-    string getName() const;
-    void setName(const string &value);
+    virtual void setCpf(const string &value)=0;
+    virtual void setName(const string &value)=0;
+    virtual void setVaccineDosesTaken(int value)=0;
+    virtual void setBirthDate(const string &value)=0;
+    virtual void setSusNumber(const string &value)=0;
 
-    int getVaccineDosesTaken() const;
-    void setVaccineDosesTaken(int value);
-
-    string getSusNumber() const;
-    void setSusNumber(const string &value);
-
-    string getBirthDate() const;
-    void setBirthDate(const string &value);
-    Patient &operator=(Patient&);
-
-protected:
-    string cpf;
-    string name;
-    int vaccineDosesTaken;
-    string susNumber;
-    string birthDate;
-    list<Patient*> patients;
 };
 
 #endif // PATIENT_H

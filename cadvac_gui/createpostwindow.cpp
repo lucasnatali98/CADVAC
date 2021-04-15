@@ -24,7 +24,7 @@ void CreatePostWindow::on_addPostButton_clicked()
 
     sys->post->createPost(ui->nameLineEdit->text().toStdString(),
                           ui->adressLineEdit->text().toStdString());
-    sys->post->listPosts();
+
 
 
     QMessageBox qmsg;

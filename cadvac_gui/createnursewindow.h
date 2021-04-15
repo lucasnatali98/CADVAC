@@ -19,6 +19,7 @@ class CreateNurseWindow : public QMainWindow
 
 public:
     System *sys;
+
     //NurseManagementWindow *nm;
     explicit CreateNurseWindow(QWidget *parent = 0);
     ~CreateNurseWindow();

@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-    System *sys = new System();
-    sys->run();
+    //System *sys = new System();
+
     return 1;
 }

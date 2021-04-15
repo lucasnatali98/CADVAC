@@ -6,6 +6,8 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    health = new HealthSecretaryWindow();
+    sys = new System();
 }
 
 LoginWindow::~LoginWindow()
@@ -15,5 +17,15 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_pushButton_clicked()
 {
-    //health.setVisible(true);
+    bool response =sys->login(ui->cpf->text().toStdString(), ui->password->text().toStdString());
+    if(response){
+        health->setVisible(true);
+    }
+    else{
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("ERRO");
+        qmsg.setText("Informações invalidas");
+        qmsg.exec();
+    }
+
 }

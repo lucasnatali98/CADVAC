@@ -2,13 +2,19 @@ TEMPLATE: lib
 
 SOURCES += \
     main.cpp \
-    patient.cpp \
+    system.cpp \
+    nurse_impl.cpp \
+    patient_impl.cpp \
+    posts_impl.cpp \
     nurse.cpp \
-    posts.cpp \
-    system.cpp
+    patient.cpp \
+    posts.cpp
 
 HEADERS += \
-    patient.h \
+    system.h \
+    nurse_impl.h \
+    patient_impl.h \
+    posts_impl.h \
     nurse.h \
-    posts.h \
-    system.h
+    patient.h \
+    posts.h

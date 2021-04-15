@@ -27,7 +27,7 @@ void CreatePatientWindow::on_addPatientButton_clicked()
     sys->patient->createPatient(ui->cpf->text().toStdString(), ui->name->text().toStdString(),
                                 ui->dateEdit->text().toStdString(),
                                 ui->susNumber->text().toStdString());
-    sys->patient->listPatients();
+
 
 
     QMessageBox qmsg;

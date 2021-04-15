@@ -28,7 +28,7 @@ void SearchPostWindow::on_searchPostButton_clicked()
         QString vaccines = QString::number(po->getVaccineCount());
 
 
-        cout<<"N: "<<*po<<endl;
+        //cout<<"N: "<<*po<<endl;
         postDetailsWindow.getAddressLineEdit()->setText(address);
         postDetailsWindow.getPostNameLineEdit()->setText(name);
         postDetailsWindow.getVaccinesLineEdit()->setText(vaccines);

@@ -27,7 +27,7 @@ void SearchPatientWindow::on_searchPatientButton_clicked()
         QString dateEdit = QString::fromUtf8(p->getBirthDate().c_str());
         QString vaccineTaken = QString::number(p->getVaccineDosesTaken());
 
-        cout<<"P: "<<*p<<endl;
+        //cout<<"P: "<<*p<<endl;
         patientDetailsWindow.getCpfLineEdit()->setText(cpf);
         patientDetailsWindow.getNameLineEdit()->setText(name);
         patientDetailsWindow.getNumberSUSLineEdit()->setText(susNumber);

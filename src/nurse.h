@@ -1,42 +1,35 @@
 #ifndef NURSE_H
 #define NURSE_H
 #include <string>
-#include <iostream>
-#include <list>
 using namespace std;
 
 class Nurse
 {
 public:
-    Nurse();
-    Nurse(string cpf, string name, string birthDate, int coren);
-    virtual ~Nurse();
 
+    virtual void createNurse(string cpf, string name, string birthDate, int coren)=0;
+    virtual bool removeNurse(string cpf)=0;
+    virtual bool updateNurse(Nurse *n, string cpf="", string name="",
+                             string birthDate="", int coren=-1)=0;
+    virtual Nurse* getNurse(string cpf)=0;
+    virtual void listNurses()=0;
+    virtual ~Nurse(){}
+    static Nurse *generateNurse();
 
-    void createNurse(string cpf, string name, string birthDate, int coren);
-    bool removeNurse(string cpf);
-    bool updateNurse(Nurse *n, string cpf="", string name="", string birthDate="", int coren=-1);
-    Nurse* getNurse(string cpf);
-    void listNurses();
+    virtual string getCpf() const=0;
 
+    virtual string getName() const= 0;
 
-    string getCpf() const;
-    void setCpf(const string &value);
-    string getName() const;
-    void setName(const string &value);
-    string getBirthDate() const;
-    void setBirthDate(const string &value);
-    int getCoren() const;
-    void setCoren(int value);
-    Nurse &operator=(Nurse&);
+    virtual string getBirthDate() const=0;
 
-    friend ostream &operator<<(ostream &out, const Nurse &n);
-protected:
-    string cpf;
-    string name;
-    string birthDate;
-    int coren;
-    list<Nurse*> nurses;
+    virtual int getCoren() const=0;
+
+    virtual void setCpf(const string &value)=0;
+    virtual void setName(const string &value)=0;
+    virtual void setBirthDate(const string &value)=0;
+    virtual void setCoren(int value)=0;
+
 };
+
 
 #endif // NURSE_H

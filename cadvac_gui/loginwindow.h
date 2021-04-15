@@ -1,6 +1,7 @@
 #ifndef LOGINWINDOW_H
 #define LOGINWINDOW_H
 #include "healthsecretarywindow.h"
+#include "../src/system.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -12,7 +13,8 @@ class LoginWindow : public QMainWindow
     Q_OBJECT
 
 public:
-   // HealthSecretaryWindow health;
+    System *sys;
+    HealthSecretaryWindow *health;
     explicit LoginWindow(QWidget *parent = 0);
     ~LoginWindow();
 

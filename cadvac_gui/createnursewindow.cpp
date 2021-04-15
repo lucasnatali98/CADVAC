@@ -28,7 +28,7 @@ void CreateNurseWindow::on_pushButton_clicked()
     sys->nurse->createNurse(ui->cpf->text().toStdString(), ui->nome->text().toStdString(),
                             ui->dateEdit->text().toStdString(),
                             cor);
-    sys->nurse->listNurses();
+
 
 
     QMessageBox qmsg;

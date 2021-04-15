@@ -32,7 +32,7 @@ void UpdateAvailableVaccinesWindow::on_updateVaccinesButton_clicked()
         int v = ui->vaccines->text().toInt();
 
         sys->post->updateVaccineNumber(p, v);
-        cout<<"Posto: "<<*p<<endl;
+        //cout<<"Posto: "<<*p<<endl;
         QMessageBox qmsg;
         qmsg.setWindowTitle("Confirmação");
         qmsg.setText("O número de vacinas foi atualizado com sucesso");

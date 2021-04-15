@@ -1,40 +1,28 @@
 #ifndef POSTS_H
 #define POSTS_H
-#include <string>
-#include <iostream>
-#include <list>
-using namespace std;
 
+#include <string>
+using namespace std;
 class Posts
 {
 public:
-    Posts();
-    Posts(string name, string address, int vaccineCount=0);
-    virtual ~Posts();
 
-    void createPost(string name, string address, int vaccineCount=0);
-    bool removePost(string name);
-    Posts *getPost(string name);
-    bool updatePost(Posts *pt, string name="", string address="", int vaccineCount=-1);
-    bool updateVaccineNumber(Posts *pt, int vNumber);
-    void listPosts();
-    string getPostName() const;
-    void setPostName(const string &value);
+    virtual void createPost(string name, string address, int vaccineCount=0)=0;
+    virtual bool removePost(string name)=0;
+    virtual Posts *getPost(string name)=0;
+    virtual bool updatePost(Posts *pt, string name="", string address="", int vaccineCount=-1)=0;
+    virtual bool updateVaccineNumber(Posts *pt, int vNumber)=0;
+    virtual void listPosts()=0;
+    virtual ~Posts(){}
+    static Posts *generatePost();
 
-    string getAddress() const;
-    void setAddress(const string &value);
+    virtual string getPostName() const=0;
+    virtual string getAddress() const=0;
+    virtual int getVaccineCount() const=0;
+    virtual void setPostName(const string &value)=0;
+    virtual void setAddress(const string &value)=0;
+    virtual void setVaccineCount(int value)=0;
 
-    int getVaccineCount() const;
-    void setVaccineCount(int value);
-
-    Posts &operator=(Posts&);
-    friend ostream &operator<<(ostream &out, const Posts &p);
-
-protected:
-    string postName;
-    string address;
-    int vaccineCount;
-    list<Posts*> posts;
 };
 
 #endif // POSTS_H

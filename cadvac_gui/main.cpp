@@ -1,7 +1,6 @@
-
-
 #include "healthsecretarywindow.h"
 #include "loginwindow.h"
+#include "user.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

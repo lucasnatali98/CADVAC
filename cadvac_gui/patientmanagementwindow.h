@@ -2,7 +2,8 @@
 #define PATIENTMANAGEMENTWINDOW_H
 #include "createpatientwindow.h"
 #include "searchpatientwindow.h"
-#include "../src/system.h"
+#include "user.h"
+#include "connectdb.h"
 #include <QMainWindow>
 #include <QLineEdit>
 #include <iostream>
@@ -17,21 +18,16 @@ class PatientManagementWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    System *sys;
+    explicit PatientManagementWindow(QWidget *parent = 0, User *currentUser = 0);
+    ~PatientManagementWindow();
+
     CreatePatientWindow *createPatientWindow;
     SearchPatientWindow *searchPatientWindow;
-    explicit PatientManagementWindow(QWidget *parent = 0);
-    ~PatientManagementWindow();
-    QLineEdit *getSecretary();
+
 private slots:
-
-
     void on_findPatientButton_clicked();
-
     void on_createPatientButton_clicked();
-
     void on_previusPageCommandButton_clicked();
-
 private:
     Ui::PatientManagementWindow *ui;
 };

@@ -1,11 +1,18 @@
 #ifndef POSTDETAILSWINDOW_H
 #define POSTDETAILSWINDOW_H
-#include <iostream>
-#include "../src/system.h"
 #include "updateavailablevaccineswindow.h"
+#include "user.h"
+#include "posts.h"
+#include "connectdb.h"
+#include "user.h"
+#include "connectdb.h"
+#include <iostream>
 #include <QLineEdit>
-using namespace std;
+#include <QDateEdit>
 #include <QMainWindow>
+#include <QMessageBox>
+using namespace std;
+
 
 namespace Ui {
 class PostDetailsWindow;
@@ -16,16 +23,13 @@ class PostDetailsWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    System *sys;
-    UpdateAvailableVaccinesWindow updateVaccines;
-    explicit PostDetailsWindow(QWidget *parent = 0);
+    explicit PostDetailsWindow(QWidget *parent = 0, Posts *posts = 0);
     ~PostDetailsWindow();
-    QLineEdit *getAddressLineEdit();
-    QLineEdit *getPostNameLineEdit();
-    QLineEdit *getVaccinesLineEdit();
 
-    System *getSys() const;
-    void setSys(System *value);
+    UpdateAvailableVaccinesWindow *updateVaccines;
+    Posts *post;
+    QWidget *parentWindown;
+    ConnectDb dataBase;
 
 private slots:
     void on_updatePostButton_clicked();

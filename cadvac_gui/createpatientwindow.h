@@ -1,9 +1,12 @@
 #ifndef CREATEPATIENTWINDOW_H
 #define CREATEPATIENTWINDOW_H
-
+#include "user.h"
+#include "connectdb.h"
+#include <iostream>
+#include <QtDebug>
 #include <QMainWindow>
 #include <QMessageBox>
-#include "../src/system.h"
+
 namespace Ui {
 class CreatePatientWindow;
 }
@@ -13,12 +16,11 @@ class CreatePatientWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    System *sys;
-    explicit CreatePatientWindow(QWidget *parent = 0);
+    explicit CreatePatientWindow(QWidget *parent = 0, User *currentUser = 0);
     ~CreatePatientWindow();
 
-    System *getSys() const;
-    //void setSys(System *value);
+    User *currentUser;
+    ConnectDb dataBase;
 
 private slots:
     void on_addPatientButton_clicked();

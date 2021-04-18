@@ -3,6 +3,8 @@
 #include "nursemanagementwindow.h"
 #include "patientmanagementwindow.h"
 #include "postsmanagementwindow.h"
+#include "user.h"
+#include "connectdb.h"
 #include <QMainWindow>
 #include <iostream>
 using namespace std;
@@ -16,12 +18,15 @@ class HealthSecretaryWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
+    explicit HealthSecretaryWindow(QWidget *parent = 0, User *currentUser = 0);
+    ~HealthSecretaryWindow();
+
+    User *currentUser;
+
     PostsManagementWindow *posts_mw;
     NurseManagementWindow *nurse_mw;
     PatientManagementWindow *patient_mw;
-
-    explicit HealthSecretaryWindow(QWidget *parent = 0);
-    ~HealthSecretaryWindow();
 
 private slots:
     void on_nurseManagementButton_clicked();

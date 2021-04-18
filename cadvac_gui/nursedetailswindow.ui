@@ -159,8 +159,8 @@
     <widget class="QPushButton" name="removeNurseButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>240</y>
+       <x>70</x>
+       <y>190</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -175,8 +175,8 @@
     <widget class="QPushButton" name="updateNurseButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>290</y>
+       <x>70</x>
+       <y>240</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -202,6 +202,19 @@
      </property>
      <property name="readOnly">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCommandLinkButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>131</x>
+       <y>290</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>voltar para gerenciamento</string>
      </property>
     </widget>
    </widget>

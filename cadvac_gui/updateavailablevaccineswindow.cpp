@@ -1,22 +1,22 @@
 #include "updateavailablevaccineswindow.h"
 #include "ui_updateavailablevaccineswindow.h"
 
-System *UpdateAvailableVaccinesWindow::getSys() const
-{
-    return sys;
-}
+//System *UpdateAvailableVaccinesWindow::getSys() const
+//{
+//    return sys;
+//}
 
-void UpdateAvailableVaccinesWindow::setSys(System *value)
-{
-    sys = value;
-}
+//void UpdateAvailableVaccinesWindow::setSys(System *value)
+//{
+//    sys = value;
+//}
 
-UpdateAvailableVaccinesWindow::UpdateAvailableVaccinesWindow(QWidget *parent) :
+UpdateAvailableVaccinesWindow::UpdateAvailableVaccinesWindow(QWidget *parent, User *currentUser) :
     QMainWindow(parent),
     ui(new Ui::UpdateAvailableVaccinesWindow)
 {
     ui->setupUi(this);
-    sys = new System();
+//    sys = new System();
 }
 
 UpdateAvailableVaccinesWindow::~UpdateAvailableVaccinesWindow()
@@ -26,24 +26,24 @@ UpdateAvailableVaccinesWindow::~UpdateAvailableVaccinesWindow()
 
 void UpdateAvailableVaccinesWindow::on_updateVaccinesButton_clicked()
 {
-    Posts *p = sys->post->getPost(postName);
+//    Posts *p = sys->post->getPost(postName);
 
-    if(p!=nullptr){
-        int v = ui->vaccines->text().toInt();
+//    if(p!=nullptr){
+//        int v = ui->vaccines->text().toInt();
 
-        sys->post->updateVaccineNumber(p, v);
-        //cout<<"Posto: "<<*p<<endl;
-        QMessageBox qmsg;
-        qmsg.setWindowTitle("Confirmação");
-        qmsg.setText("O número de vacinas foi atualizado com sucesso");
-        qmsg.exec();
-    }
-    else{
-        QMessageBox qmsg;
-        qmsg.setWindowTitle("ERRO");
-        qmsg.setText("O número de vacinas não pode ser atualizado");
-        qmsg.exec();
-    }
+////        sys->post->updateVaccineNumber(p, v);
+//        //cout<<"Posto: "<<*p<<endl;
+//        QMessageBox qmsg;
+//        qmsg.setWindowTitle("Confirmação");
+//        qmsg.setText("O número de vacinas foi atualizado com sucesso");
+//        qmsg.exec();
+//    }
+//    else{
+//        QMessageBox qmsg;
+//        qmsg.setWindowTitle("ERRO");
+//        qmsg.setText("O número de vacinas não pode ser atualizado");
+//        qmsg.exec();
+//    }
 
 
     clearForm();

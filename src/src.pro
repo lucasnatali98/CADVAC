@@ -8,13 +8,17 @@ SOURCES += \
     posts_impl.cpp \
     nurse.cpp \
     patient.cpp \
-    posts.cpp
+    posts.cpp \
+    user_impl.cpp
 
 HEADERS += \
+    connectdb.h \
     system.h \
     nurse_impl.h \
     patient_impl.h \
     posts_impl.h \
     nurse.h \
     patient.h \
-    posts.h
+    posts.h \
+    user.h \
+    user_impl.h

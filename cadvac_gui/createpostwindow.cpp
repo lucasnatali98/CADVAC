@@ -1,17 +1,11 @@
 #include "createpostwindow.h"
 #include "ui_createpostwindow.h"
 
-System *CreatePostWindow::getSys() const
-{
-    return sys;
-}
-
-CreatePostWindow::CreatePostWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::CreatePostWindow)
+CreatePostWindow::CreatePostWindow(QWidget *parent, User *user) : QMainWindow(parent), ui(new Ui::CreatePostWindow)
 {
     ui->setupUi(this);
-    sys = new System();
+    currentUser = user;
+    ui->user->setText(QString::fromStdString(currentUser->getName()));
 }
 
 CreatePostWindow::~CreatePostWindow()
@@ -21,19 +15,31 @@ CreatePostWindow::~CreatePostWindow()
 
 void CreatePostWindow::on_addPostButton_clicked()
 {
+    if(!dataBase.openDb()){
+        QMessageBox::warning(this, "ERROR", "Conexão com a base de dados falhou");
 
-    sys->post->createPost(ui->nameLineEdit->text().toStdString(),
-                          ui->adressLineEdit->text().toStdString());
+    } else{
 
+        QString name = ui->nameLineEdit->text();
+        QString address = ui->adressLineEdit->text();
 
+        QSqlQuery query;
+        if(query.prepare("INSERT INTO HelthPosts (name, address)"
+                         "VALUES('"+name+"', '"+address+"')")){
+           if(query.exec()){
+               QMessageBox::information(this, "SUCCESS", "Posto cadastrado com sucesso");
+               clearForm();
+               dataBase.closeDb();
+               this->close();
+           } else{
+               QMessageBox::warning(this, "ERROR", "Erro ao inserir");
+           }
+        } else {
+            QMessageBox::warning(this, "ERROR", "Erro");
+        }
+    }
 
-    QMessageBox qmsg;
-    qmsg.setWindowTitle("Confirmação");
-    qmsg.setText("O posto de saúde foi criado com sucesso");
-    qmsg.exec();
-    clearForm();
-
-    this->close();
+    dataBase.closeDb();
 }
 void CreatePostWindow::clearForm()
 {

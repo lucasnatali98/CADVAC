@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -34,6 +34,7 @@ SOURCES += \
         ../src/patient_impl.cpp \
         ../src/nurse_impl.cpp \
         ../src/posts_impl.cpp \
+        ../src/user_impl.cpp \
         createpatientwindow.cpp \
         createpostwindow.cpp \
         loginwindow.cpp \
@@ -60,6 +61,9 @@ HEADERS += \
         ../src/patient_impl.h \
         ../src/nurse_impl.h \
         ../src/posts_impl.h \
+        ../src/user.h \
+        ../src/user_impl.h \
+        ../src/connectdb.h \
         createpatientwindow.h \
         createpostwindow.h \
         loginwindow.h \

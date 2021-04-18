@@ -1,22 +1,20 @@
 #include "patientdetailswindow.h"
 #include "ui_patientdetailswindow.h"
 
-System *PatientDetailsWindow::getSys() const
-{
-    return sys;
-}
-
-void PatientDetailsWindow::setSys(System *value)
-{
-    sys = value;
-}
-
-PatientDetailsWindow::PatientDetailsWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::PatientDetailsWindow)
+PatientDetailsWindow::PatientDetailsWindow(QWidget *parent, Patient* searchPatient) : QMainWindow(parent), ui(new Ui::PatientDetailsWindow)
 {
     ui->setupUi(this);
-    sys = new System();
+    patient = searchPatient;
+    parentWindown = parent;
+    // gambiarra
+    parent->setVisible(true);
+
+    ui->cpfLineEdit->setText(QString::fromStdString(patient->getCpf()));
+    ui->nameLineEdit->setText(QString::fromStdString(patient->getName()));
+    ui->numberSUS_lineEdit->setText(QString::fromStdString(patient->getSusNumber()));
+    ui->birthDateLineEdit->setText(QString::fromStdString(patient->getBirthDate()));
+    ui->dosesTakenLineEdit->setText(QString::number(patient->getVaccineDosesTaken()));
+
 }
 
 PatientDetailsWindow::~PatientDetailsWindow()
@@ -24,30 +22,6 @@ PatientDetailsWindow::~PatientDetailsWindow()
     delete ui;
 }
 
-QLineEdit *PatientDetailsWindow::getCpfLineEdit()
-{
-    return ui->cpfLineEdit;
-}
-
-QLineEdit *PatientDetailsWindow::getNameLineEdit()
-{
-    return ui->nameLineEdit;
-}
-
-QLineEdit *PatientDetailsWindow::getBirthDateLineEdit()
-{
-    return ui->birthDateLineEdit;
-}
-
-QLineEdit *PatientDetailsWindow::getNumberSUSLineEdit()
-{
-    return ui->numberSUS_lineEdit;
-}
-
-QLineEdit *PatientDetailsWindow::getVaccineDosesTakenLineEdit()
-{
-    return ui->dosesTakenLineEdit;
-}
 
 void PatientDetailsWindow::on_scheduleVaccinationButton_clicked()
 {
@@ -56,7 +30,27 @@ void PatientDetailsWindow::on_scheduleVaccinationButton_clicked()
 
 void PatientDetailsWindow::on_removePatientButton_clicked()
 {
+    if(!dataBase.openDb()){
+        QMessageBox::warning(this, "ERROR", "Conexão com a base de dados falhou");
 
+    } else{
+
+        QSqlQuery query;
+        if(query.prepare("DELETE FROM Patients WHERE cpf='"+QString::fromStdString(patient->getCpf())+"'")){
+           if(query.exec()){
+               QMessageBox::information(this, "SUCCESS", "Paciente removido com sucesso");
+               clearForm();
+               dataBase.closeDb();
+               this->close();
+           } else{
+               QMessageBox::warning(this, "ERROR", "Erro ao deletar");
+           }
+        } else {
+            QMessageBox::warning(this, "ERROR", "Erro");
+        }
+    }
+
+    dataBase.closeDb();
 }
 
 void PatientDetailsWindow::on_updatePatientButton_clicked()

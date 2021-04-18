@@ -1,14 +1,14 @@
 #ifndef CREATENURSEWINDOW_H
 #define CREATENURSEWINDOW_H
+#include "user.h"
+#include "connectdb.h"
 #include <iostream>
 #include <QtDebug>
-using namespace std;
 #include <QMainWindow>
 #include <QMessageBox>
-//#include "nursemanagementwindow.h"
 
+using namespace std;
 
-#include "../src/system.h"
 namespace Ui {
 class CreateNurseWindow;
 }
@@ -18,13 +18,11 @@ class CreateNurseWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    System *sys;
-
-    //NurseManagementWindow *nm;
-    explicit CreateNurseWindow(QWidget *parent = 0);
+    explicit CreateNurseWindow(QWidget *parent = 0, User *currentUser = 0);
     ~CreateNurseWindow();
 
-    System *getSys() const;
+    User *currentUser;
+    ConnectDb dataBase;
 
 private slots:
     void on_pushButton_clicked();

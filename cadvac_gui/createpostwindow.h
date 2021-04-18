@@ -1,8 +1,8 @@
 #ifndef CREATEPOSTWINDOW_H
 #define CREATEPOSTWINDOW_H
-#include "../src/system.h"
+#include "user.h"
+#include "connectdb.h"
 #include <QMessageBox>
-
 #include <QMainWindow>
 
 namespace Ui {
@@ -14,15 +14,13 @@ class CreatePostWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    System *sys;
-    explicit CreatePostWindow(QWidget *parent = 0);
+    explicit CreatePostWindow(QWidget *parent = 0, User *currentUser = 0);
     ~CreatePostWindow();
 
-    System *getSys() const;
+    User *currentUser;
+    ConnectDb dataBase;
 
 private slots:
-
-
     void on_addPostButton_clicked();
     void clearForm();
 private:

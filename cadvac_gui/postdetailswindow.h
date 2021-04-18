@@ -3,7 +3,9 @@
 #include <iostream>
 #include "../src/system.h"
 #include "updateavailablevaccineswindow.h"
+#include "updatepostwindow.h"
 #include <QLineEdit>
+#include <QMessageBox>
 using namespace std;
 #include <QMainWindow>
 
@@ -18,6 +20,7 @@ class PostDetailsWindow : public QMainWindow
 public:
     System *sys;
     UpdateAvailableVaccinesWindow updateVaccines;
+    UpdatePostWindow updatePost;
     explicit PostDetailsWindow(QWidget *parent = 0);
     ~PostDetailsWindow();
     QLineEdit *getAddressLineEdit();

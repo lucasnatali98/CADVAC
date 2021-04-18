@@ -51,17 +51,36 @@ QLineEdit *PatientDetailsWindow::getVaccineDosesTakenLineEdit()
 
 void PatientDetailsWindow::on_scheduleVaccinationButton_clicked()
 {
-
+    vaccinesDosesTaken.setVisible(true);
+    vaccinesDosesTaken.sys = sys;
+    vaccinesDosesTaken.cpf_aux = ui->cpfLineEdit->text().toStdString();
+    this->close();
 }
 
 void PatientDetailsWindow::on_removePatientButton_clicked()
 {
-
+    bool result = sys->patient->removePatient(ui->cpfLineEdit->text().toStdString());
+    if(result == true){
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("Confirmação");
+        qmsg.setText("O paciente foi removido com sucesso");
+        qmsg.exec();
+    }
+    else{
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("Erro");
+        qmsg.setText("Não foi possivel remover o paciente");
+        qmsg.exec();
+    }
+    this->close();
 }
 
 void PatientDetailsWindow::on_updatePatientButton_clicked()
 {
-
+    updatePatient.setVisible(true);
+    updatePatient.sys = sys;
+    updatePatient.cpf_aux = ui->cpfLineEdit->text().toStdString();
+    this->close();
 }
 
 void PatientDetailsWindow::clearForm()

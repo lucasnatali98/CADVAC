@@ -2,8 +2,10 @@
 #define NURSEDETAILSWINDOW_H
 #include <iostream>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QDateEdit>
 #include "../src/system.h"
+#include "updatenursewindow.h"
 using namespace std;
 #include <QMainWindow>
 
@@ -17,6 +19,7 @@ class NurseDetailsWindow : public QMainWindow
 
 public:
     System *sys;
+    UpdateNurseWindow updateNurse;
     explicit NurseDetailsWindow(QWidget *parent = 0);
     ~NurseDetailsWindow();
 

@@ -16,10 +16,10 @@ public:
     bool removePatient(string cpf);
     Patient* getPatient(string cpf);
     bool updatePatient(Patient* p, string cpf="", string name="", string birthDate="",
-                       string susNumber="", int vaccine = -1);
+                       string susNumber="");
 
     void listPatients();
-
+    bool updateVaccinesDosesTaken(Patient *p, int value);
 
     static Patient *generatePatient();
 

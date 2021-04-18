@@ -6,7 +6,7 @@ Patient_Impl::Patient_Impl()
     setName("");
     setBirthDate("");
     setSusNumber("");
-    setVaccineDosesTaken(-1);
+    setVaccineDosesTaken(0);
 }
 
 Patient_Impl::~Patient_Impl()
@@ -31,7 +31,7 @@ void Patient_Impl::createPatient(string cpf, string name, string birthDate, stri
 
 bool Patient_Impl::removePatient(string cpf)
 {
-    cout<<"Remove patients"<<endl;
+
     for(auto i: patients){
 
         if(i->getCpf() == cpf){
@@ -53,7 +53,7 @@ Patient *Patient_Impl::getPatient(string cpf)
 }
 
 bool Patient_Impl::updatePatient(Patient *p, string cpf, string name, string birthDate,
-                            string susNumber, int vaccine)
+                            string susNumber)
 {
     for(auto i: patients){
         if(i == p){
@@ -61,7 +61,7 @@ bool Patient_Impl::updatePatient(Patient *p, string cpf, string name, string bir
             i->setName(name);
             i->setBirthDate(birthDate);
             i->setSusNumber(susNumber);
-            i->setVaccineDosesTaken(vaccine);
+           // i->setVaccineDosesTaken(vaccine);
             return true;
         }
     }
@@ -74,6 +74,17 @@ void Patient_Impl::listPatients()
     for(auto it : patients){
         cout<<it->getName()<<", "<<it->getCpf()<<endl;
     }
+}
+
+bool Patient_Impl::updateVaccinesDosesTaken(Patient *p, int value)
+{
+    for(auto i: patients){
+        if(i == p){
+            i->setVaccineDosesTaken(value);
+            return true;
+        }
+    }
+    return false;
 }
 list<Patient*> Patient_Impl::patients;
 Patient *Patient::generatePatient(){

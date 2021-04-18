@@ -50,12 +50,30 @@ NurseDetailsWindow::~NurseDetailsWindow()
 
 void NurseDetailsWindow::on_updateNurseButton_clicked()
 {
+    updateNurse.setVisible(true);
+    updateNurse.sys = sys;
+    updateNurse.cpf_aux = ui->cpfLineEdit->text().toStdString();
 
+    this->close();
 }
 
 void NurseDetailsWindow::on_removeNurseButton_clicked()
 {
 
+    bool result = sys->nurse->removeNurse(ui->cpfLineEdit->text().toStdString());
+    if(result == true){
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("Confirmação");
+        qmsg.setText("O enfermeiro foi removido com sucesso");
+        qmsg.exec();
+    }
+    else{
+        QMessageBox qmsg;
+        qmsg.setWindowTitle("Erro");
+        qmsg.setText("Não foi possivel remover o enfermeiro");
+        qmsg.exec();
+    }
+    this->close();
 }
 
 void NurseDetailsWindow::clearForm()

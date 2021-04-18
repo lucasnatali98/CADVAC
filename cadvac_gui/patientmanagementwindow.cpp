@@ -28,7 +28,7 @@ void PatientManagementWindow::on_findPatientButton_clicked()
     searchPatientWindow->setVisible(true);
     searchPatientWindow->sys = sys;
 
-    searchPatientWindow->sys->patient->listPatients();
+    //searchPatientWindow->sys->patient->listPatients();
 }
 
 void PatientManagementWindow::on_createPatientButton_clicked()

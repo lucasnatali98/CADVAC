@@ -34,7 +34,7 @@ void NurseManagementWindow::on_findNurseButton_clicked()
     searchNurseWindow->setVisible(true);
     searchNurseWindow->sys = sys;
 
-    searchNurseWindow->sys->nurse->listNurses();
+    //searchNurseWindow->sys->nurse->listNurses();
 
 }
 

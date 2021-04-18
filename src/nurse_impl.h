@@ -22,19 +22,14 @@ public:
 
 
     string getCpf() const;
-
     string getName() const;
-
     string getBirthDate() const;
-
     int getCoren() const;
 
     //factory
-
     static Nurse *generateNurse();
 
     Nurse_Impl &operator=(Nurse_Impl&);
-
     friend ostream &operator<<(ostream &out, const Nurse_Impl &n);
 protected:
     string cpf;

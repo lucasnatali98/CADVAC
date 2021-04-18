@@ -32,7 +32,7 @@ void PostsManagementWindow::on_findPostButton_clicked()
     searchPostWindow->setVisible(true);
     searchPostWindow->sys = sys;
 
-    searchPostWindow->sys->post->listPosts();
+//    searchPostWindow->sys->post->listPosts();
 }
 
 void PostsManagementWindow::on_previusPageCommandButton_clicked()

@@ -27,7 +27,7 @@ void SearchNurseWindow::on_searchNurseButton_clicked()
         QString coren = QString::number(n->getCoren());
         QString dateEdit = QString::fromUtf8(n->getBirthDate().c_str());
 
-        cout<<"N: "<<n->getCpf()<<endl;
+        //cout<<"N: "<<n->getCpf()<<endl;
         nurseDetailsWindow.getCpfLineEdit()->setText(cpf);
         nurseDetailsWindow.getNameLineEdit()->setText(name);
         nurseDetailsWindow.getCorenLineEdit()->setText(coren);

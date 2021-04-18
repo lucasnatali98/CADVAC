@@ -1,8 +1,11 @@
 #ifndef PATIENTDETAILSWINDOW_H
 #define PATIENTDETAILSWINDOW_H
 #include "../src/system.h"
+#include "updatepatientwindow.h"
+#include "vaccinesdosestakenwindow.h"
 #include <iostream>
 #include <QLineEdit>
+#include <QMessageBox>
 using namespace std;
 
 #include <QMainWindow>
@@ -17,6 +20,8 @@ class PatientDetailsWindow : public QMainWindow
 
 public:
     System *sys;
+    VaccinesDosesTakenWindow vaccinesDosesTaken;
+    UpdatePatientWindow updatePatient;
     explicit PatientDetailsWindow(QWidget *parent = 0);
     ~PatientDetailsWindow();
 

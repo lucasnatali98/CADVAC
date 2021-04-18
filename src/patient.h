@@ -12,10 +12,11 @@ public:
     virtual bool removePatient(string cpf)=0;
     virtual Patient* getPatient(string cpf)=0;
     virtual bool updatePatient(Patient* p, string cpf="", string name="", string birthDate="",
-                       string susNumber="", int vaccine = -1)=0;
+                       string susNumber="")=0;
 
     virtual void listPatients()=0;
 
+    virtual bool updateVaccinesDosesTaken(Patient *p, int value)=0;
     static Patient *generatePatient();
     virtual ~Patient(){}
 

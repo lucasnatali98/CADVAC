@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PatientDetailsWindow</class>
- <widget class="QMainWindow" name="PatientDetailsWindow">
+ <class>UpdateNurseWindow</class>
+ <widget class="QMainWindow" name="UpdateNurseWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>389</width>
-    <height>419</height>
+    <width>380</width>
+    <height>329</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Detalhes do paciente</string>
+   <string>Atualizar enfermeiro</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>391</width>
-      <height>421</height>
+      <width>381</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -32,12 +32,12 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="cpfTag">
+    <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>20</y>
-       <width>41</width>
+       <y>50</y>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
@@ -51,11 +51,11 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="nameTag">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>60</y>
+       <y>90</y>
        <width>51</width>
        <height>25</height>
       </rect>
@@ -70,11 +70,11 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="cpfLineEdit">
+    <widget class="QLineEdit" name="cpf">
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>20</y>
+       <y>50</y>
        <width>191</width>
        <height>25</height>
       </rect>
@@ -82,15 +82,12 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
     </widget>
-    <widget class="QLineEdit" name="nameLineEdit">
+    <widget class="QLineEdit" name="nome">
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>60</y>
+       <y>90</y>
        <width>191</width>
        <height>25</height>
       </rect>
@@ -98,15 +95,12 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
     </widget>
-    <widget class="QLineEdit" name="bornTag">
+    <widget class="QLineEdit" name="lineEdit_5">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>100</y>
+       <y>160</y>
        <width>141</width>
        <height>25</height>
       </rect>
@@ -121,129 +115,46 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="scheduleVaccinationButton">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>260</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Marcar paciente como vacinado</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="susNumberTag">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>140</y>
-       <width>121</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Número do SUS:</string>
-     </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="numberSUS_lineEdit">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>140</y>
-       <width>151</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="dosesTakenTag">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>170</y>
-       <width>181</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Doses da vacina tomadas:</string>
-     </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="dosesTakenLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>170</y>
-       <width>151</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="removePatientButton">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>310</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Remover paciente</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="updatePatientButton">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>360</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Atualizar paciente</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="birthDateLineEdit">
+    <widget class="QPushButton" name="updateNurseButton">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>100</y>
+       <y>280</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Atualizar enfermeiro</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_13">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>131</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Registro COREN:</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="coren">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>130</y>
        <width>151</width>
        <height>25</height>
       </rect>
@@ -251,8 +162,18 @@
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
-     <property name="readOnly">
-      <bool>true</bool>
+    </widget>
+    <widget class="QDateEdit" name="dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>160</y>
+       <width>181</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
    </widget>

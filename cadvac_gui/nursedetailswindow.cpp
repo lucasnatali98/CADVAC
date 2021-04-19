@@ -6,7 +6,7 @@ NurseDetailsWindow::NurseDetailsWindow(QWidget *parent, User* searchUser) : QMai
     ui->setupUi(this);
     user = searchUser;
     parentWindown = parent;
-    // gambiarra
+
     parent->setVisible(true);
 
     ui->cpfLineEdit->setText(QString::fromStdString(user->getCpf()));
@@ -22,7 +22,8 @@ NurseDetailsWindow::~NurseDetailsWindow()
 
 void NurseDetailsWindow::on_updateNurseButton_clicked()
 {
-
+    updateNurserWindow = new UpdateNurserWindow(this, user);
+    updateNurserWindow->setVisible(true);
 }
 
 void NurseDetailsWindow::on_removeNurseButton_clicked()

@@ -1,10 +1,9 @@
 #ifndef POSTDETAILSWINDOW_H
 #define POSTDETAILSWINDOW_H
 #include "updateavailablevaccineswindow.h"
+#include "updatepostwindow.h"
 #include "user.h"
 #include "posts.h"
-#include "connectdb.h"
-#include "user.h"
 #include "connectdb.h"
 #include <iostream>
 #include <QLineEdit>
@@ -12,7 +11,6 @@
 #include <QMainWindow>
 #include <QMessageBox>
 using namespace std;
-
 
 namespace Ui {
 class PostDetailsWindow;
@@ -27,15 +25,14 @@ public:
     ~PostDetailsWindow();
 
     UpdateAvailableVaccinesWindow *updateVaccines;
+    UpdatePostWindow *updatePostWindow;
     Posts *post;
     QWidget *parentWindown;
     ConnectDb dataBase;
 
 private slots:
     void on_updatePostButton_clicked();
-
     void on_removePostButton_clicked();
-
     void on_updateNumberVaccinesButton_clicked();
     void clearForm();
 private:

@@ -131,7 +131,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Marcar vacinação</string>
+      <string>Marcar paciente como vacinado</string>
      </property>
      <property name="default">
       <bool>true</bool>

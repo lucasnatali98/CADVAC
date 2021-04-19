@@ -1,22 +1,15 @@
 #include "updateavailablevaccineswindow.h"
 #include "ui_updateavailablevaccineswindow.h"
 
-//System *UpdateAvailableVaccinesWindow::getSys() const
-//{
-//    return sys;
-//}
-
-//void UpdateAvailableVaccinesWindow::setSys(System *value)
-//{
-//    sys = value;
-//}
-
-UpdateAvailableVaccinesWindow::UpdateAvailableVaccinesWindow(QWidget *parent, User *currentUser) :
-    QMainWindow(parent),
-    ui(new Ui::UpdateAvailableVaccinesWindow)
+UpdateAvailableVaccinesWindow::UpdateAvailableVaccinesWindow(QWidget *parent, Posts *searchPost) : QMainWindow(parent), ui(new Ui::UpdateAvailableVaccinesWindow)
 {
     ui->setupUi(this);
-//    sys = new System();
+    post = searchPost;
+    parentWindown = parent;
+
+//    parent->setVisible(true);
+
+    ui->vaccines->setText(QString::number(post->getVaccineCount()));
 }
 
 UpdateAvailableVaccinesWindow::~UpdateAvailableVaccinesWindow()
@@ -26,33 +19,33 @@ UpdateAvailableVaccinesWindow::~UpdateAvailableVaccinesWindow()
 
 void UpdateAvailableVaccinesWindow::on_updateVaccinesButton_clicked()
 {
-//    Posts *p = sys->post->getPost(postName);
+    if(!dataBase.openDb()){
+        QMessageBox::warning(this, "ERROR", "Conexão com a base de dados falhou");
 
-//    if(p!=nullptr){
-//        int v = ui->vaccines->text().toInt();
+    } else{
 
-////        sys->post->updateVaccineNumber(p, v);
-//        //cout<<"Posto: "<<*p<<endl;
-//        QMessageBox qmsg;
-//        qmsg.setWindowTitle("Confirmação");
-//        qmsg.setText("O número de vacinas foi atualizado com sucesso");
-//        qmsg.exec();
-//    }
-//    else{
-//        QMessageBox qmsg;
-//        qmsg.setWindowTitle("ERRO");
-//        qmsg.setText("O número de vacinas não pode ser atualizado");
-//        qmsg.exec();
-//    }
+        QString vaccines = ui->vaccines->text();
 
+        QSqlQuery query;
+        if(query.prepare("UPDATE HelthPosts SET amountVaccine='"+QString::number(vaccines.toInt())+"'"
+                         " WHERE name='"+QString::fromStdString(post->getPostName())+"'")){
+           if(query.exec()){
+               QMessageBox::information(this, "SUCCESS", "Vacinas atualizadas com sucesso");
+               clearForm();
+               dataBase.closeDb();
+               this->close();
+           } else{
+               QMessageBox::warning(this, "ERROR", "Erro ao atualizar");
+           }
+        } else {
+            QMessageBox::warning(this, "ERROR", "Erro");
+        }
+    }
 
-    clearForm();
-
-    this->close();
+    dataBase.closeDb();
 }
 
 void UpdateAvailableVaccinesWindow::clearForm()
 {
     ui->vaccines->clear();
-
 }

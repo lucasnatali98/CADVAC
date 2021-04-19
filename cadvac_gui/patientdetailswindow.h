@@ -3,6 +3,8 @@
 #include "user.h"
 #include "patient.h"
 #include "connectdb.h"
+#include "updatepatientwindow.h"
+#include "vaccinesdosestakenwindow.h"
 #include <iostream>
 #include <QLineEdit>
 #include <QMessageBox>
@@ -23,6 +25,8 @@ public:
     explicit PatientDetailsWindow(QWidget *parent = 0, Patient *searchPatient = 0);
     ~PatientDetailsWindow();
 
+    VaccinesDosesTakenWindow *vaccinesDosesTakenWindow;
+    UpdatePatientWindow *updatePatientWindow;
     Patient *patient;
     QWidget *parentWindown;
     ConnectDb dataBase;

@@ -1,9 +1,12 @@
 #ifndef UPDATEAVAILABLEVACCINESWINDOW_H
 #define UPDATEAVAILABLEVACCINESWINDOW_H
-#include "user.h"
-#include <string>
-#include <QMessageBox>
+#include "posts.h"
+#include "connectdb.h"
+#include <iostream>
+#include <QLineEdit>
+#include <QDateEdit>
 #include <QMainWindow>
+#include <QMessageBox>
 
 namespace Ui {
 class UpdateAvailableVaccinesWindow;
@@ -14,13 +17,12 @@ class UpdateAvailableVaccinesWindow : public QMainWindow
     Q_OBJECT
 
 public:
-//    System *sys;
-    string postName;
-    explicit UpdateAvailableVaccinesWindow(QWidget *parent = 0, User *currentUser = 0);
+    explicit UpdateAvailableVaccinesWindow(QWidget *parent = 0, Posts *searchPost = 0);
     ~UpdateAvailableVaccinesWindow();
 
-//    System *getSys() const;
-//    void setSys(System *value);
+    Posts *post;
+    QWidget *parentWindown;
+    ConnectDb dataBase;
 
 private slots:
     void on_updateVaccinesButton_clicked();

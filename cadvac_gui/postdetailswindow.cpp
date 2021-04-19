@@ -6,7 +6,7 @@ PostDetailsWindow::PostDetailsWindow(QWidget *parent, Posts *searchPost) : QMain
     ui->setupUi(this);
     post = searchPost;
     parentWindown = parent;
-    // gambiarra
+
     parent->setVisible(true);
 
     ui->nameLineEdit->setText(QString::fromStdString(post->getPostName()));
@@ -21,7 +21,8 @@ PostDetailsWindow::~PostDetailsWindow()
 
 void PostDetailsWindow::on_updatePostButton_clicked()
 {
-
+    updatePostWindow = new UpdatePostWindow(this, post);
+    updatePostWindow->setVisible(true);
 }
 
 void PostDetailsWindow::on_removePostButton_clicked()
@@ -51,13 +52,8 @@ void PostDetailsWindow::on_removePostButton_clicked()
 
 void PostDetailsWindow::on_updateNumberVaccinesButton_clicked()
 {
-//    updateVaccines.setVisible(true);
-//    updateVaccines.setSys(sys);
-
-//    updateVaccines.postName = ui->nameLineEdit->text().toStdString();
-    clearForm();
-    this->close();
-
+    updateVaccines = new UpdateAvailableVaccinesWindow(this, post);
+    updateVaccines->setVisible(true);
 }
 
 void PostDetailsWindow::clearForm()

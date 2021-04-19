@@ -31,7 +31,7 @@ void SearchPostWindow::on_searchPostButton_clicked()
 
               QString name = query.value(1).toString();
               QString address = query.value(2).toString();
-              int amountVaccine = query.value(4).toInt();
+              int amountVaccine = query.value(3).toInt();
 
               if(name.toStdString() != ""){
 

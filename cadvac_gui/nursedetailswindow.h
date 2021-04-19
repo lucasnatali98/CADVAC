@@ -2,6 +2,7 @@
 #define NURSEDETAILSWINDOW_H
 #include "user.h"
 #include "connectdb.h"
+#include "updatenurserwindow.h"
 #include <iostream>
 #include <QLineEdit>
 #include <QDateEdit>
@@ -22,6 +23,7 @@ public:
     ~NurseDetailsWindow();
 
 //    NurseManagementWindow *nurseManagementWindow;
+    UpdateNurserWindow *updateNurserWindow;
     QWidget *parentWindown;
     User *user;
     ConnectDb dataBase;

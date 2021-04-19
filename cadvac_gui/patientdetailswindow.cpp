@@ -6,7 +6,7 @@ PatientDetailsWindow::PatientDetailsWindow(QWidget *parent, Patient* searchPatie
     ui->setupUi(this);
     patient = searchPatient;
     parentWindown = parent;
-    // gambiarra
+
     parent->setVisible(true);
 
     ui->cpfLineEdit->setText(QString::fromStdString(patient->getCpf()));
@@ -25,7 +25,8 @@ PatientDetailsWindow::~PatientDetailsWindow()
 
 void PatientDetailsWindow::on_scheduleVaccinationButton_clicked()
 {
-
+    vaccinesDosesTakenWindow = new VaccinesDosesTakenWindow(this, patient);
+    vaccinesDosesTakenWindow->setVisible(true);
 }
 
 void PatientDetailsWindow::on_removePatientButton_clicked()
@@ -55,7 +56,8 @@ void PatientDetailsWindow::on_removePatientButton_clicked()
 
 void PatientDetailsWindow::on_updatePatientButton_clicked()
 {
-
+    updatePatientWindow = new UpdatePatientWindow(this, patient);
+    updatePatientWindow->setVisible(true);
 }
 
 void PatientDetailsWindow::clearForm()

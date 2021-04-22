@@ -1,5 +1,4 @@
 #include "loginwindow.h"
-#include "ui_loginwindow.h"
 
 LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::LoginWindow)
 {
@@ -10,6 +9,7 @@ LoginWindow::~LoginWindow()
 {
     delete currentUser;
     delete ui;
+//    delete this;
 }
 
 void LoginWindow::on_pushButton_clicked()

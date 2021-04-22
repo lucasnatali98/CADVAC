@@ -28,6 +28,9 @@ public:
     NurseManagementWindow *nurse_mw;
     PatientManagementWindow *patient_mw;
 
+//    Ui::HealthSecretaryWindow *ui;
+//    Ui::HealthSecretaryWindow *ui;
+
 private slots:
     void on_nurseManagementButton_clicked();
 

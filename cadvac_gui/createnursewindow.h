@@ -17,6 +17,8 @@ class CreateNurseWindow : public QMainWindow
 {
     Q_OBJECT
 
+    friend class testeGUI;
+
 public:
     explicit CreateNurseWindow(QWidget *parent = 0, User *currentUser = 0);
     ~CreateNurseWindow();

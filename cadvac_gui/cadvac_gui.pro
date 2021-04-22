@@ -27,12 +27,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         createnursewindow.cpp \
-        ../src/system.cpp \
-        ../src/posts.cpp \
-        ../src/nurse.cpp \
-        ../src/patient.cpp \
         ../src/patient_impl.cpp \
-        ../src/nurse_impl.cpp \
         ../src/posts_impl.cpp \
         ../src/user_impl.cpp \
         createpatientwindow.cpp \
@@ -52,15 +47,13 @@ SOURCES += \
     updatenurserwindow.cpp \
     updatepatientwindow.cpp \
     updatepostwindow.cpp \
-    vaccinesdosestakenwindow.cpp
+    vaccinesdosestakenwindow.cpp \
 
 
 HEADERS += \
         mainwindow.h \
         createnursewindow.h \
-        ../src/system.h \
         ../src/posts.h \
-        ../src/nurse.h \
         ../src/patient.h \
         ../src/patient_impl.h \
         ../src/nurse_impl.h \
@@ -85,7 +78,7 @@ HEADERS += \
     updatenurserwindow.h \
     updatepatientwindow.h \
     updatepostwindow.h \
-    vaccinesdosestakenwindow.h
+    vaccinesdosestakenwindow.h \
 
 FORMS += \
         mainwindow.ui \
@@ -107,7 +100,7 @@ FORMS += \
     updatenurserwindow.ui \
     updatepatientwindow.ui \
     updatepostwindow.ui \
-    vaccinesdosestakenwindow.ui
+    vaccinesdosestakenwindow.ui \
 
 
 INCLUDEPATH += $$PWD/../src/

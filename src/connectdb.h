@@ -9,9 +9,7 @@ class ConnectDb{
 public:
     QSqlDatabase dataBase;
 
-    ConnectDb(){
-        dataBase = QSqlDatabase::addDatabase("QSQLITE");
-    }
+    ConnectDb(){}
 
     bool openDb(){
         dataBase = QSqlDatabase::addDatabase("QSQLITE");

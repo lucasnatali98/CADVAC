@@ -10,6 +10,8 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    friend class testeGUI;
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();

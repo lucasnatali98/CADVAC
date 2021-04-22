@@ -9,7 +9,7 @@ TEMPLATE = subdirs
 SUBDIRS += \
     src \
     cadvac_gui \
-    test
+    autoTeste \
 
 
 

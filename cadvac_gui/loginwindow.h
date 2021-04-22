@@ -3,6 +3,7 @@
 #include "healthsecretarywindow.h"
 #include "connectdb.h"
 #include "user.h"
+#include "ui_loginwindow.h"
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
@@ -15,6 +16,8 @@ class LoginWindow;
 class LoginWindow : public QMainWindow
 {
     Q_OBJECT
+
+    friend class testeGUI;
 
 public:
     explicit LoginWindow(QWidget *parent = 0);

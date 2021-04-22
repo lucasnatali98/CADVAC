@@ -2,6 +2,7 @@
 #include "loginwindow.h"
 #include "user.h"
 #include <QApplication>
+#include <QMainWindow>
 
 int main(int argc, char *argv[])
 {

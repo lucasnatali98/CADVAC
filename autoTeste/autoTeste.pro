@@ -12,11 +12,11 @@ TARGET = autoTeste.pro
 
 SOURCES += \
         tst_testegui.cpp \
-        ../cadvac_gui/mainwindow.cpp \
-        ../cadvac_gui/createnursewindow.cpp \
         ../src/patient_impl.cpp \
         ../src/posts_impl.cpp \
         ../src/user_impl.cpp \
+        ../cadvac_gui/mainwindow.cpp \
+        ../cadvac_gui/createnursewindow.cpp \
         ../cadvac_gui/createpatientwindow.cpp \
         ../cadvac_gui/createpostwindow.cpp \
         ../cadvac_gui/loginwindow.cpp \
@@ -37,15 +37,15 @@ SOURCES += \
         ../cadvac_gui/vaccinesdosestakenwindow.cpp \
 
 HEADERS += \
-        ../cadvac_gui/mainwindow.h \
-        ../cadvac_gui/createnursewindow.h \
-        ../src/posts.h \
+        ../src/connectdb.h \
         ../src/patient.h \
+        ../src/posts.h \
+        ../src/user.h \
         ../src/patient_impl.h \
         ../src/posts_impl.h \
-        ../src/user.h \
         ../src/user_impl.h \
-        ../src/connectdb.h \
+        ../cadvac_gui/mainwindow.h \
+        ../cadvac_gui/createnursewindow.h \
         ../cadvac_gui/createpatientwindow.h \
         ../cadvac_gui/createpostwindow.h \
         ../cadvac_gui/loginwindow.h \

@@ -1,5 +1,4 @@
-//#define ERROLOGIN
-
+//#define ERRLOGIN
 #include "connectdb.h"
 #include "patient.h"
 #include "posts.h"
@@ -43,17 +42,11 @@ private:
     ConnectDb dataBase;
 
 private slots:
-    #ifdef ERROLOGIN
-    void loginERR_data();
-    #endif
-    #ifndef ERROLOGIN
     void login_data();
-    #endif
     void login();
-    #ifndef ERROLOGIN
+
     void createNurse_data();
     void createNurse();
-    #endif
 };
 
 testeGUI::testeGUI(){
@@ -64,24 +57,20 @@ testeGUI::testeGUI(){
 testeGUI::~testeGUI(){
     delete currentUser;
 }
-#ifdef ERROLOGIN
-void testeGUI::loginERR_data()
-{
-    QTest::addColumn<QString>("cpf");
-    QTest::addColumn<QString>("password");
-    QTest::addColumn<QPushButton*>("buttonLogin");
-    QTest::newRow("login") << QString("2") << QString("admin") << loginWin.ui->pushButton;
-}
-#endif
-#ifndef ERROLOGIN
+
 void testeGUI::login_data()
 {
     QTest::addColumn<QString>("cpf");
     QTest::addColumn<QString>("password");
     QTest::addColumn<QPushButton*>("buttonLogin");
+    #ifndef ERRLOGIN
     QTest::newRow("login") << QString("admin") << QString("admin") << loginWin.ui->pushButton;
+    #endif
+    #ifdef ERRLOGIN
+    QTest::newRow("login") << QString("2") << QString("admin") << loginWin.ui->pushButton;
+    #endif
 }
-#endif
+
 void testeGUI::login()
 {
         QFETCH(QString, cpf);
@@ -98,9 +87,9 @@ void testeGUI::login()
         QTest::mouseClick(buttonLogin, Qt::LeftButton);
 
 }
-#ifndef ERROLOGIN
-void testeGUI::createNurse_data(){
 
+void testeGUI::createNurse_data(){
+#ifndef ERRLOGIN
     QTest::addColumn<QString>("cpf");
     QTest::addColumn<QString>("name");
     QTest::addColumn<int>("coren");
@@ -108,10 +97,11 @@ void testeGUI::createNurse_data(){
     QTest::addColumn<QPushButton*>("buttonRegister");
 
     QTest::newRow("login") << QString("99999999999") << QString("nurseTest") << 55 << QString("10/10/1999") << nurseWin->ui->pushButton;
-
+#endif
 }
-void testeGUI::createNurse(){
 
+void testeGUI::createNurse(){
+#ifndef ERRLOGIN
         QFETCH(QString, cpf);
         QFETCH(QString, name);
         QFETCH(int, coren);
@@ -130,9 +120,8 @@ void testeGUI::createNurse(){
         QTest::keyClicks(nurseWin->ui->coren, QString::number(coren));
         QTest::keyClicks(nurseWin->ui->dateEdit, birth);
         QTest::mouseClick(buttonRegister, Qt::LeftButton);
-
-}
 #endif
+}
 
 QTEST_MAIN(testeGUI)
 

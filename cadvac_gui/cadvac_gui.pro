@@ -25,11 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
+        mainwindow.cpp \        
         createnursewindow.cpp \
-        ../src/patient_impl.cpp \
-        ../src/posts_impl.cpp \
-        ../src/user_impl.cpp \
         createpatientwindow.cpp \
         createpostwindow.cpp \
         loginwindow.cpp \
@@ -51,16 +48,9 @@ SOURCES += \
 
 
 HEADERS += \
+        ../src/connectdb.h \
         mainwindow.h \
         createnursewindow.h \
-        ../src/posts.h \
-        ../src/patient.h \
-        ../src/patient_impl.h \
-        ../src/nurse_impl.h \
-        ../src/posts_impl.h \
-        ../src/user.h \
-        ../src/user_impl.h \
-        ../src/connectdb.h \
         createpatientwindow.h \
         createpostwindow.h \
         loginwindow.h \
@@ -102,5 +92,3 @@ FORMS += \
     updatepostwindow.ui \
     vaccinesdosestakenwindow.ui \
 
-
-INCLUDEPATH += $$PWD/../src/
